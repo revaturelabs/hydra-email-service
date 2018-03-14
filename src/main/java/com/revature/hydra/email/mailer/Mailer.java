@@ -96,12 +96,20 @@ public class Mailer implements Runnable {
 	 */
 	private Properties setProperties() {
 		Properties properties = new Properties();
-		properties.put("mail.smtp.host", "smtp.gmail.com");
-		properties.put("mail.smtp.socketFactory.port", "587");
-		properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-		properties.put("mail.smtp.auth", "true");
-		properties.put("mail.smtp.port", "587");
-		properties.put("mail.smtp.starttls.enable", "true");
+//		properties.put("mail.smtp.host", "smtp.gmail.com");
+//		properties.put("mail.smtp.socketFactory.port", "587");
+//		properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+//		properties.put("mail.smtp.auth", "true");
+//		properties.put("mail.smtp.port", "587");
+//		properties.put("mail.smtp.starttls.enable", "true");
+
+		//best practice to use setProperty
+		properties.setProperty("mail.smtp.host", "smtp.gmail.com");
+		properties.setProperty("mail.smtp.socketFactory.port", "587");
+		properties.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+		properties.setProperty("mail.smtp.auth", "true");
+		properties.setProperty("mail.smtp.port", "587");
+		properties.setProperty("mail.smtp.starttls.enable", "true");
 		return properties;
 	}
 
